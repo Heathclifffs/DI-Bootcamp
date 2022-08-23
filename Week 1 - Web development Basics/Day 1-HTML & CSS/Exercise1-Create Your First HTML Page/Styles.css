@@ -35,13 +35,17 @@ body {
 	margin:auto;
 	padding:auto;
 	justify-content:center;
-	/*text-align:center;
-	display:block;*/
+	text-align:center;
+	/*display:block;*/
+}
+.middle-3,table{
+	margin:10%;
+	margin-top:1%;
 }
 img{
 	width:50%;
 	height:50%;
-	border-style:groove;
+	border-style:solid;
 	border-color:brown;
 }
 h3{
@@ -57,4 +61,11 @@ span{
 }
 th,td{
 	border:solid black 1px;
+}
+.last{
+	margin:auto;
+	padding:auto;
+	width:80%;
+	text-align:center;
+
 }
