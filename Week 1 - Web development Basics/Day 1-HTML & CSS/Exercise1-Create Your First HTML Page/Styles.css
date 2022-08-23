@@ -1,1 +1,5 @@
-body
+body {
+	font-family: verdana,serif;
+	margin:10px;
+	padding:10px;
+}
