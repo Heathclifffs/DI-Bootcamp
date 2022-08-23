@@ -1,1 +1,51 @@
-body
+body{
+	font-family:'verdana',serif;
+	background-color:#F2F3F5;
+	width:99%;
+	margin:auto;
+}
+button{
+	background-color:#00308F;
+	border-color:#00308F;
+}
+.first{
+	
+
+}
+
+.second{
+	width:100%;
+	background-image:url("pexels-booshen-navaratnam-1555313.jpg");
+	color:white;
+	justify-content:center;
+	text-align:center;
+	
+}
+.second-1{
+	width:50%;
+	
+}
+
+.S2-1-1{
+
+
+}
+
+.S2-1-2{
+
+
+}
+.last{
+	display:flex;
+}
+
+.last1{
+
+}
+.last2{
+
+}
+.last3{
+
+}
+
