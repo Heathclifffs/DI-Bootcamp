@@ -7,45 +7,87 @@ body{
 button{
 	background-color:#00308F;
 	border-color:#00308F;
+	color:white
 }
 .first{
-	
+	width:80%;
+	display:flex;
+	justify-content:center;	
+	text-align:center;
 
+}
+.one{
+width:80%;
+}
+.two{
+width:20%;
 }
 
 .second{
 	width:100%;
 	background-image:url("pexels-booshen-navaratnam-1555313.jpg");
 	color:white;
+	/*margin:auto;
+	padding:auto;*/
+	display:flex;
 	justify-content:center;
 	text-align:center;
-	
+	background-size:cover;
+	height:25em;
 }
 .second-1{
-	width:50%;
-	
+	position:absolute;
+	width:70%;
+	margin:20%;
+	padding:auto;
+	bottom:100px;
+	justify-content:center;
+	font-size:40px;
+	text-align:center;
 }
+
 
 .S2-1-1{
 
 
 }
+input[type=email]{
+	width:60%;
+	height:2em;
+}
+input[type=submit]{
+	width:10%;
+	color:white;
+	height:2em;
+	background-color:#00308F;
+	border-color:#00308F;
+	height:2em;
+}
 
 .S2-1-2{
+width:100%;
 
-
+}
+.fa-3x{
+color:blue
 }
 .last{
 	display:flex;
+	margin:auto;
+	justify-content:center;
+	text-align:center;
+	padding:1%;
+	padding-top:3%;
 }
 
 .last1{
+	width:32%;
 
 }
 .last2{
-
+width:32%;
 }
 .last3{
-
+width:32%;
 }
 
