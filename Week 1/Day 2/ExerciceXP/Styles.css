@@ -1,0 +1,33 @@
+body{
+	width:98%;
+
+}
+.nav{
+	width:100%;
+	display:inline-block;
+	background-color:black;
+	color:white;
+}
+.fa-2x{
+	color:white;
+	margin:0px;
+	padding-left:14px;
+	padding-top:10px;
+}
+nav{
+	float:right;
+	padding-right:17px;
+}
+a {
+  display: block;
+}
+ul {
+  list-style-type: none;
+}
+li a {
+  font-size:12px;
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
