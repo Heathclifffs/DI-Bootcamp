@@ -1,6 +1,32 @@
 body{
 
 }
+label{
+	font-weight:bold;
+	font-size:100%;
+	color:white;
+	justify-content:center;
+	
+}
+.left{
+    margin-top:10%;
+    display:inline-block;
+    float:left;
+    width: 20%;
+    height: 40px;
+    border-radius: 50% /50%;
+    background:green;
+}
+.right{
+    margin-top:10%;
+    text-align:center;
+    display:inline-block;
+    float:right;
+    width: 20%;
+    height: 40px;
+    border-radius: 50% /50%;
+    background:red;
+}
 .contents{
 	margin:auto;
 	padding:auto;
@@ -8,10 +34,22 @@ body{
 .elements{
 	width:100%;
 	text-align:center;
+	padding-bottom:20px;
 }
 .up{
 	width:100%;
 	height:50vh;
+}
+p{
+	color:green;
+	font-weight:bold;
+}
+.text{
+	color:gray;
+	text-decoration: line-through;
+}
+button{
+	color:gray;
 }
 
 .img1{	
