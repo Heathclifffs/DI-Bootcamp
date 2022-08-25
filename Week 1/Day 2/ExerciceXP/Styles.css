@@ -31,3 +31,14 @@ li a {
   text-align: center;
   text-decoration: none;
 }
+footer {
+  position:relative;
+  left:0;
+  top:70vh;
+  width: 100%;
+  background-color:black;
+  color: white;
+  text-align: center;
+  margin:auto;
+  padding:opx;
+}
