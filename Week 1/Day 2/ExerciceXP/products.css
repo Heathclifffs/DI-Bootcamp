@@ -1,29 +1,31 @@
 body{
-
+	font-family:'verdana';
 }
-label{
+.left>p,.right>p{
 	font-weight:bold;
 	font-size:100%;
 	color:white;
-	justify-content:center;
+	justify-content:center
 	
 }
 .left{
+    margin-left:1.5%;	
     margin-top:10%;
     display:inline-block;
     float:left;
     width: 20%;
-    height: 40px;
+    height: 45px;
     border-radius: 50% /50%;
     background:green;
 }
 .right{
+   margin-right:1.5%;
     margin-top:10%;
     text-align:center;
     display:inline-block;
     float:right;
     width: 20%;
-    height: 40px;
+    height: 45px;
     border-radius: 50% /50%;
     background:red;
 }
@@ -73,4 +75,67 @@ button{
 	padding-right:20px;
 	display:inline-block;
 	width:17%;
+}
+.h{
+	width:12%;
+	height:4vh;
+	align-items:center;
+	border: solid black 1.5px;
+	display:inline-block;
+	text-align:center;
+	margin-left:1%;
+	background-color:white;
+}
+.img1:hover .hoover{
+	display:block;
+	visibility:visible;
+}
+
+.h:hover{
+	BACKGROUND-COLOR:green;
+}
+i:hover{
+	color:white;
+}
+.img2:hover .hoover{
+	display:block;
+	visibility:visible;
+}
+.img3:hover .hoover{
+	display:block;
+	visibility:visible;
+}
+.img4:hover .hoover{
+	display:block;
+	visibility:visible;
+}
+.fa-2px{
+	position:relative;
+	top:11%;
+}
+.hoover{
+	position:relative;
+	top:50%;
+	display:none;
+}
+@media all and (max-width:600px){
+	*{
+	display:inline-block;
+ }
+ .img1{
+	display:inline-block;
+	width:80%;
+	}
+ .img2{
+	display:inline-block;
+	width:80%;
+	}
+ .img3{
+	display:block;
+	width:80%;
+	}
+ .img4{
+	display:block;
+	width:80%;
+	}
 }

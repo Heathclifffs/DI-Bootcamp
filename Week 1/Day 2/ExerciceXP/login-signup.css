@@ -1,0 +1,40 @@
+body{
+	font-family:'verdana';
+	width:80%;
+	margin:auto;
+	padding:auto;
+	background-color:black;
+	height:100vh;
+}
+.form{
+	width:60%;
+	margin:auto;
+	padding:auto;
+	display:block;
+	text-align:center;
+	background-color:white;
+	height:70vh;
+	position:relative;
+	top:18%;
+	
+	
+}
+input{
+	width:40%;
+	height:30px;
+	margin-bottom:2%;
+	margin-right:1%;
+}
+form{
+
+}
+legend{
+	font-weight:bold;
+	font-size:140%;
+	text-align:left;
+}
+fieldset{
+	border:none;
+
+}
+

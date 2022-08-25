@@ -14,9 +14,10 @@ body{
 	padding-left:14px;
 	padding-top:10px;
 }
-nav{
+nav{	width:50%;
 	float:right;
 	padding-right:17px;
+	display:inline;
 }
 a {
   display: block;
@@ -24,7 +25,13 @@ a {
 ul {
   list-style-type: none;
 }
+li{
+
+	float:right;
+	margin-right:10%;
+}
 li a {
+  justify-content:center;
   font-size:12px;
   display: block;
   color: white;
