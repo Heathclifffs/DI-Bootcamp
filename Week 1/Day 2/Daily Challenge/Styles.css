@@ -2,6 +2,7 @@
 body{
 	margin:auto;
 	padding:auto;
+
  
 }
 
@@ -35,7 +36,7 @@ body{
 	position:relative;
 	text-align:justify;
 	top:50px;
-	left:1px
+	left:1px;
 	
 }
 .Title{
@@ -47,6 +48,11 @@ body{
 }
 .nav{
 	width:80%;
+}
+.cl{
+	font-weight:bold;
+	font-size:25px;
+
 }
 nav{
 	display:inline-block;
@@ -99,3 +105,80 @@ footer{
 	color:white;
 	padding-bottom:2%;
 }
+		/*Media queries*/
+
+@media all and (min-width:992px) and (orientation: landscape) {
+	.menu{
+		background-color:black;
+		
+	}
+	li a{
+	color:whhite;}	
+	
+	footer{
+		background-color:black;
+		color:white;
+	}
+}
+
+
+@media all and (min-width: 768px) and (max-width:992px) and (orientation: landscape) {
+	.menu{
+		background-color:red;
+		}
+	li a{
+		color:whhite;
+		}	
+	
+	footer{
+		background-color:red;
+		color:white;
+		}
+	.flow{
+		width:80%;
+		display:flex;
+		justify-content:center;
+		}
+	.text{
+		width:50%;
+		display:inline-block;
+	}
+	.title{
+		width:20%;
+		display:inline-block;	
+		}
+}
+
+@media all and (min-width: 600px) and  (max-width: 768px) and (orientation: landscape) {
+	.Title{
+		font-size:25px;
+	}
+		.menu{
+		background-color:lightgreen;
+		
+	}
+	li a{
+	color:black;}
+	footer{
+		background-color:lightgreen;
+		color:black;
+	}
+
+ }
+@media all and (min-width: 100px) and (max-width:600px) and (orientation: portrait) {
+	.Title{
+		font-size:25px;
+	}
+	.menu{
+		background-color:yellow;	
+	}
+	li a{
+	color:black;}
+	footer{
+		background-color:yellow;
+		color:black;
+	}
+ }
+
+
+
