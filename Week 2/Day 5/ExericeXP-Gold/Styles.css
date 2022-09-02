@@ -18,9 +18,15 @@ body{
 input[type="text"]{
 	width:97%;
 	height:10vh;
+	margin-top:0.5%;
+	margin-bottom:0.3%;
 	}
 
 button{
 
-	width:1%;
+	width:20%;
+}
+.Button{
+	width:97%;
+	display:inline-block;
 }
