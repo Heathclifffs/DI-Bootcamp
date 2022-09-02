@@ -1,4 +1,6 @@
-/* already do that in a C program*/
+/* already do that in a C program
+check html file for instructions 
+*/
 			function playTheGame(){
 			//-------------------------------------------1st  Part----------------------------------------------------------------------------------------
 					var result = confirm("Would you like to play this game");
@@ -41,7 +43,7 @@
 					while(chance!=0){
 						if(userNumber === computerNumber ){
 							alert('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WINNER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n The game will stop');
-							chance=0;
+							chance=-1;
 						}else if(userNumber > computerNumber){
 							chance=chance-1;
 							alert ('Your number is bigger then the computer’s, guess again \n left try again = '+chance);
