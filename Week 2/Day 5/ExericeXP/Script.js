@@ -40,7 +40,7 @@ check html file for instructions
 
 			function compareNumbers(userNumber,computerNumber){
 						var chance=3;
-					while(chance!=0){
+					while(chance>0){
 						if(userNumber === computerNumber ){
 							alert('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WINNER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n The game will stop');
 							chance=-1;

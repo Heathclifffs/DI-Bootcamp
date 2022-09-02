@@ -1,0 +1,26 @@
+body{
+	font-family:"verdana",serif;
+	width:90%;
+	margin:auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.contents{
+	margin-top:5%;
+	width:50%;
+	height:75vh;
+	text-align:center;
+	background-color:#ED9121;
+
+}
+input[type="text"]{
+	width:97%;
+	height:10vh;
+	}
+
+button{
+
+	width:1%;
+}
