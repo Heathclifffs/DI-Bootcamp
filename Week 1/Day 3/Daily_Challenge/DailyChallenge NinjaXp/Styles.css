@@ -1,0 +1,87 @@
+
+body{
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	}
+	.container{
+
+width: 80%;
+display: flex;
+justify-content: center;
+
+flex-direction: column;
+border: solid black; 10px;
+margin: 20px;
+
+background-color: white;
+box-shadow:  10px 10px 10px  black;
+text-align: center;
+
+}
+.grid1{
+	display: flex;
+display: grid;
+justify-content: center;
+grid-template-columns: repeat(16, 40px);
+grid-template-rows: repeat(16, 40px);
+gap: 1px 2px;
+margin-top: 40px;
+
+}
+
+.grid3{
+	display: flex;
+display: grid;
+justify-content: center;
+grid-template-columns: repeat(16, 40px);
+grid-template-rows: repeat(9, 40px);
+margin-top: 40px;
+
+}
+
+.orange{
+	background-color: orangered;
+
+}
+.olive{
+	background-color: olivedrab;
+}
+.bordeaux{
+	background-color: brown;
+}
+
+.lightgrey{
+	background-color: lightgrey;
+
+}
+
+.grey{
+	background-color: grey ;
+
+}
+
+.darkgrey{
+	background-color: darkgrey;
+
+}
+
+.black{
+	background-color: black;
+
+}
+
+.white{
+	background-color: white ;
+
+}
+
+.indianred{
+	background-color: indianred;
+
+}
+
+.palevioletred{
+	background-color: palevioletred;
+
+}
