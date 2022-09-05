@@ -18,7 +18,8 @@
 							}else if(cmp===1 ||cmp===0){
 								alert('Take '+ oNumber+ ' down, pass them around \nwe have now '+ cmp +' bottle');
 							}else if((cmp-oNumber)<0){
-								alert('no bottle of beer on the wall');				
+								alert('no bottle of beer on the wall');
+								break;				
 							}else{
 								alert('Take '+ oNumber+ ' down, pass them around \nwe have now '+ cmp +' bottles');
 							}

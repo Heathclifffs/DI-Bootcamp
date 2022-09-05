@@ -6,37 +6,42 @@
     <link rel="stylesheet" href="Styles.css">
     <style>
       button {
-        width:70px;
-        height:70px;
+        width:24%;
+        height:11.5vh;
       }
     </style>
   </head>
   <body>
    <div class="contents">	
-    	<input type="text" name ="screen" value="equal()">
+    	<div id='result' class="result">
+		
+	</div>
 	</br>
 	<div class="Button">
-    		<button type="button" name="button" onclick="number(0);">0</button>
-    		<button type="button" name="button" onclick="number(1);">1</button>
-    		<button type="button" name="button" onclick="number(2);">2</button>
-    		<button type="button" name="button" onclick="number(3);">3</button>
+		
+    		<button class="green" type="button" name="button" onclick="number(0);">0</button>
+    		<button class="green" type="button" name="button" onclick="number(1);">1</button>
+    		<button class="green" type="button" name="button" onclick="number(2);">2</button>
+    		<button class="green" type="button" name="button" onclick="number(3);">3</button>
 	    	<br>
-    		<button type="button" name="button" onclick="number(4);">4</button>
-    		<button type="button" name="button" onclick="number(5);">5</button>
-    		<button type="button" name="button" onclick="number(6);">6</button>
-    		<button type="button" name="button" onclick="number(7);">7</button>
+    		<button class="green" type="button" name="button" onclick="number(4);">4</button>
+    		<button class="green" type="button" name="button" onclick="number(5);">5</button>
+    		<button class="green" type="button" name="button" onclick="number(6);">6</button>
+    		<button class="green" type="button" name="button" onclick="number(7);">7</button>
     		<br>
-    		<button type="button" name="button" onclick="number(8);">8</button>
-    		<button type="button" name="button" onclick="number(9);">9</button>
-    		<button type="button" name="button" onclick="number(0);">0</button>
-    		<button type="button" name="button" onclick="operator('+');">+</button>
+    		<button class="green" type="button" name="button" onclick="number(8);">8</button>
+    		<button class="green" type="button" name="button" onclick="number(9);">9</button>
+    		<button class="orange" type="button" name="button" onclick="operator('.');">.</button>
+    		<button class="orange" type="button" name="button" onclick="operator('+');">+</button>
     		<br>
-    		<button type="button" name="button" onclick="operator('-');">-</button>
-    		<button type="button" name="button" onclick="operator('*');">*</button>
-    		<button type="button" name="button" onclick="operator('/');">/</button>
-    		<button type="button" name="button" onclick="equal();">=</button>
+    		<button class="orange" type="button" name="button" onclick="operator('-');">-</button>
+    		<button class="orange" type="button" name="button" onclick="operator('*');">*</button>
+    		<button class="orange" type="button" name="button" onclick="operator('/');">/</button>
+    		<button class="orange" type="button" name="button" onclick="equal();">=</button>
+		<button class="blue" type="button" name="button" onclick="equal();">Reset</button>
+		<button class="red" type="button" name="button" onclick="equal();">Clear</button>
     		<script type="text/javascript" src="Script.js" charset="utf-8"></script>
-	</div>
+
   </div>
   </body>
 </html>
