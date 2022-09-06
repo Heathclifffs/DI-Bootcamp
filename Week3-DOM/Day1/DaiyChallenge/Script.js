@@ -27,23 +27,7 @@
 			console.log(changer);
 			changer.appendChild(newdiv[i]);
 		}
-//--------------------bonuses
-			console.log("-------------------------------------Bonuses--------------------------------------------------");
-			var moons=["Sun","Moon"]
-			for (j=0;j<moons.length;j++){
-				newdiv[j]=document.createElement('div');
-				newp[j]=document.createElement('p')
-				newTextNode[j] = document.createTextNode(moons[j]);
-				console.log(newTextNode[j]);
-				newp[j].appendChild(newTextNode[j]);
-				newdiv[j].appendChild(newp[j]);
-				newdiv[j].setAttribute("class","moon");
-				console.log(newdiv[j]);
-				newdiv[j].style.backgroundColor="rgb(1"+(2*i)+"1,1"+(1*i)+"1,1"+(0*i)+"1)";
-				console.log(newdiv[j]);
-				changer.appendChild(newdiv[j]);
-			}
-			changer1=document.getElementsByClassName("moon");
+		changer1=document.getElementsByClassName("moon");
 			changer2=document.getElementsByClassName("planet");
 			console.log(changer1);
 			document.body.style.marging="auto"
@@ -55,3 +39,30 @@
 			//	element.style.width="80%";
 				element.style.display="inline-block";
 			}
+
+//--------------------bonuses
+			console.log("-------------------------------------Bonuses--------------------------------------------------");
+			var moons=[]
+			var row=document.getElementsByClassName("planet");
+				console.log(row);
+				var f=0;
+			for (j=0;j<planets.length;j++){
+				var nb=prompt("how many moons for "+planets[j]);
+				f=f+1;
+				for(k=0;k<nb;k++){
+					newdiv[k]=document.createElement('div');
+					newp[k]=document.createElement('p')
+					moon=prompt("name of moons "+k);
+					newTextNode[k] = document.createTextNode(moon+"."+f);
+					console.log(newTextNode[k]);
+					newp[k].appendChild(newTextNode[k]);
+					newdiv[k].appendChild(newp[k]);
+					newdiv[k].setAttribute("class","moon");
+					console.log(newdiv[k]);
+					newdiv[k].style.backgroundColor="rgb(1"+(2*i)+"1,1"+(1*i)+"1,1"+(0*i)+"1)";
+					console.log(newdiv[k]);
+					row[j].appendChild(newdiv[k]);
+				}
+					
+			}	
+			
