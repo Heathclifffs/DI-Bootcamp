@@ -60,10 +60,13 @@
 
 //----------------------------------------------------------------------------Exercise 3--------------------------------------------------------------------------------
 								//1
-								let number=prompt("Enter a number please");
-								while(Number(number)<10){
-								alert("Enter a new number the actual is low than what required")
-								number=prompt("Enter a number please");
+								var numbers=prompt("Enter a number >10");
+								numbers=parseInt(numbers);
+								alert(numbers+" "+typeof(numbers));
+								while(!numbers || (numbers<10) ){
+								alert("Enter a new number the actual is not what is required")
+								numbers=prompt("Enter a number please");
+								numbers=parseInt(numbers);
 								}
 			//simple While loop is more relevant in this case because it will always check the first answer of the user before giving an answer
 				
