@@ -42,7 +42,7 @@
 
 //--------------------bonuses
 			console.log("-------------------------------------Bonuses--------------------------------------------------");
-			var moons=[]
+			//var moons=[]
 			var row=document.getElementsByClassName("planet");
 				console.log(row);
 				var f=0;
@@ -59,7 +59,7 @@
 					newdiv[k].appendChild(newp[k]);
 					newdiv[k].setAttribute("class","moon");
 					console.log(newdiv[k]);
-					newdiv[k].style.backgroundColor="rgb(1"+(2*i)+"1,1"+(1*i)+"1,1"+(0*i)+"1)";
+					newdiv[k].style.backgroundColor="rgb(1"+(5+j)+"1,1"+(3+j)+"1,1"+(j)+"1)";
 					console.log(newdiv[k]);
 					row[j].appendChild(newdiv[k]);
 				}
