@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Styles.css">
+    <title>How Many </title>
+  </head>
+  <body onload="init()">
+	<div id=scoreBar>
+		<p>How Many Game</p>
+		<div class="board">
+			<label id="try"></label><label id="stage"></label>
+		</div>
+	</div>
+	<div id=content>
+		<div id=sidebar>
+			<h1>Story</h1>
+			<img src="Harold.jpg" width="100px" height="100px">
+			<p>the evil shadow king Harold has stolen all the figures of the kingdom. Your mission young hero is to take them back, will you be able to?</p>
+		</div>
+		<div id="gameCenter">
+			<div id="displayImg">
+				<button id=s onclick="start(event)">Try To Save The Kingdom<br>Start The Game Now ?</button>
+			</div>
+			<div id="displayFigure">
+				<div id="1" class="figure" onclick="values(event)">
+					<p>1</p>
+				</div><div id="2" class="figure" onclick="values(event)">
+					<p>2</p>
+				</div><div id="3" class="figure" onclick="values(event)">
+					<p>3</p>
+				</div><div id="4" class="figure" onclick="values(event)">
+					<p>4</p>
+				</div><div id="5" class="figure" onclick="values(event)">
+					<p>5</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>All rights reserved to team :</p>
+		<button id=song onclick="songs()">click to disable the song</button>
+		<!--<audio autoplay loop>
+			<source src="Welcome.mp3" type="audio/mpeg">
+		</audio>-->
+	</footer>
+  </body>
+	<script type="text/javascript" src="Script.js"></script>
+</html>

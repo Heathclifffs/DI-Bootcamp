@@ -1,0 +1,158 @@
+body{
+	text-align:center;
+	background:url("background1.jpg");
+	background-size:cover;
+
+}
+
+#scoreBar{
+	width:100 %;
+	margin-bottom:2%;
+	background-color: rgba(30,30,30);
+	color:  white;
+}
+#content{
+	width:100 %;
+	text-align:center;
+	padding-top:1%;
+	height:370px;
+}
+.board{
+	width:60%;
+	float:right;
+	display:inline-block;
+	font-size:25px;
+	margin-top:2.2%;	
+
+}
+label{
+	float:right;
+}
+#scoreBar>p{
+	width:38%;
+	font-size:25px;
+	display:inline-block;
+	
+	border: solid lightgreen;
+	margin-left: 0.9%;
+}
+#sidebar:hover {
+  color: red;
+  border: solid red 2px;
+  /*! width:35%; */
+}
+#sidebar{
+	 position: relative;
+	float:left;
+	width:29%;
+	border-radius:8px;
+	height:340px;
+	display:inline-block;
+	background-color: #1e1e1e;
+	border: solid lightgreen 2px;
+	color:  white;
+
+}
+#gameCenter{
+	width:70%;
+	display:inline-block;
+	float:right;
+	height:340px;
+}
+#displayFigure>button{
+	border-color:green;
+	border-radius:25px;
+}
+#displayFigure>div{
+	background-color:rgba(255,255,255,0.5);
+}
+#displayFigure{
+	background-color:rgba(255,215,0,0.5);
+	margin-top:1.5%;
+	height:140px;
+	border:solid black;
+	width:97%;
+	border-radius:10px;
+	box-shadow: 2px 2px 2px 2px black;
+}
+
+	
+.blue{
+	color:blue;
+}
+.red{
+	color:red;
+}
+#displayImg>button{
+	border-color:green;
+	border-radius:25px;
+}
+#displayImg>div{
+	background-color:rgba(255,255,255,0.5);
+}
+#displayImg{
+	background-color:rgba(255,215,0,0.5);
+	margin-top:4%;
+	height:140px;
+	border:solid ;
+	width:97%;
+	border-radius:10px;
+	box-shadow: 2px 2px 2px 2px black;
+}
+.figure{
+		border-radius:10px;
+}
+input{
+	border-color:blue;
+	border-radius:5px;
+	margin-bottom:2%;
+	text-align:center;
+}
+#s{
+	margin-top:10%;
+}
+
+footer{
+	margin:auto;
+	height:9VH;
+	font-size:23px;
+	bottom:50px;
+	background-color:rgba(30,30,30);
+	text-align:center;
+	color:white;
+	width:98%;
+	padding-top:4%;
+	padding-bottom:2%;
+}
+footer>p{
+	margin-top:0%;
+	border:solid lightgreen 2px;
+ 
+}	
+
+footer>button{
+ 	width:45%;
+	border:solid lightgreen;
+	background-color:rgba(255,255,255,0.2);
+	color:white;
+	font-size:20px;
+	border-radius:12px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

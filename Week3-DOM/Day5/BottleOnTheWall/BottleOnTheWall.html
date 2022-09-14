@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Styles.css">
+    <title>BottleOnTheWall</title>
+  </head>
+  <body onload="init()">
+ 	<div id=scoreBar>
+		<p>BottleOnTheWall Game</p>
+		<div class="board">
+			<label id="try"></label><label id="stage"></label>
+		</div>
+	</div>
+	<div id=content>
+		<div id=sidebar>
+			<h1>Story</h1>
+			<img src="Harold.jpg" width="100px" height="100px">
+			<p>The shadow king Harold has kidnapped the princess of kingdom and will only return her to whoever succeeds in his challenge... will you?</p>
+		</div>
+		<div id="gameCenter">
+			<div id="displayImg">
+				<button id=s onclick="start(event)">Try To Save The princess<br>Start The Game Now ?</button>
+			</div>
+			<div id="displayFigure">
+				<div id="answer">
+					<input type="text" name="answer" placeholder="input your answer"></input><br>
+					<button id=validate> validate</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>All rights reserved to team :</p>
+		<button id=song onclick="songs()">click to disable the song</button>	
+		<!--<audio autoplay loop>
+			<source src="Welcome.mp3" type="audio/mpeg">
+		</audio>-->
+	</footer>
+  </body>
+	<script type="text/javascript" src="Script.js"></script>
+</html>
