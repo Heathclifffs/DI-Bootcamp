@@ -35,8 +35,8 @@ def player_input(player):
 
 
 def check_win():
-	if(((l1[0]==l2[0]==l3[0]) or (l1[1]==l2[1]==l3[1]) or (l1[2]==l2[2]==l3[2]) or (l1[0]==l1[1]==l1[2]) or (l2[0]==l2[1]==l2[2]) or (l3[0]==l3[1]==l3[2]))):
-		if ((l1[0]==l1[1]==l1[2]==' ') or (l2[0]==l2[1]==l2[2]==' ') or (l3[0]==l3[1]==l3[2]==' ')):
+	if(((l1[0]==l2[0]==l3[0]) or (l1[1]==l2[1]==l3[1]) or (l1[2]==l2[2]==l3[2]) or (l1[0]==l1[1]==l1[2]) or (l2[0]==l2[1]==l2[2]) or (l3[0]==l3[1]==l3[2]) or (l1[0]==l2[1]==l3[2]) or (l1[2]==l2[1]==l3[0]))):
+		if ((l1[0]==l1[1]==l1[2]==' ') or (l2[0]==l2[1]==l2[2]==' ') or (l3[0]==l3[1]==l3[2]==' ') or (l1[0]==l2[1]==l3==' ')):
 			print('the Game continue')
 			return False
 		else:
@@ -50,7 +50,9 @@ player=['X','O']
 def play():
 	v=check_win()
 	val=0
+	turn=0
 	while(v==False):
+		turn=turn+1
 		display_board()
 		player_input(player[val])
 		if val==0:
@@ -59,6 +61,10 @@ def play():
 			val=val-1
 
 		v=check_win()
+		if turn==9:
+			v=True
+			print('NO Winner Game is over tie Game')
+			
 	display_board()
 
 play()
