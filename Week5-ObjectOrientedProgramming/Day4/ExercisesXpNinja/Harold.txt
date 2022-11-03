@@ -1,0 +1,9 @@
+Name : HAROLD
+Age : 21
+----	Stats  ----
+Strength : 14
+Dexterity : 5
+Constitution : 8
+Intelligence : 15
+Wisdom : 13
+Charisma : 11

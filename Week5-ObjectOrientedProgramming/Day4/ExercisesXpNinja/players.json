@@ -1,0 +1,34 @@
+{
+   "players": [
+      {
+         "Name": "HAROLD",
+         "Age": "21",
+         "Strength": 14,
+         "Dexterity": 5,
+         "Constitution": 8,
+         "Intelligence": 15,
+         "Wisdom": 13,
+         "Charisma": 11
+      },
+      {
+         "Name": "HEATHCLIFFFS",
+         "Age": "12",
+         "Strength": 12,
+         "Dexterity": 11,
+         "Constitution": 15,
+         "Intelligence": 13,
+         "Wisdom": 12,
+         "Charisma": 15
+      },
+      {
+         "Name": "ENDEAVOUR",
+         "Age": "32",
+         "Strength": 7,
+         "Dexterity": 14,
+         "Constitution": 12,
+         "Intelligence": 13,
+         "Wisdom": 9,
+         "Charisma": 9
+      }
+   ]
+}

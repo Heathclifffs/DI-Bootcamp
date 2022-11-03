@@ -1,0 +1,9 @@
+Name : HEATHCLIFFFS
+Age : 12
+----	Stats  ----
+Strength : 12
+Dexterity : 11
+Constitution : 15
+Intelligence : 13
+Wisdom : 12
+Charisma : 15

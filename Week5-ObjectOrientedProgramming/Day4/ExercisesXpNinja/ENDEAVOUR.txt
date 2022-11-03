@@ -1,0 +1,9 @@
+Name : ENDEAVOUR
+Age : 32
+----	Stats  ----
+Strength : 7
+Dexterity : 14
+Constitution : 12
+Intelligence : 13
+Wisdom : 9
+Charisma : 9
