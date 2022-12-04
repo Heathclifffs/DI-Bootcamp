@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .border{
+             border: solid 1px black
+        }
+
+    </style>
+</head>
+<body>
+{% block content %}
+
+        <h1>Liste of people} </h1>
+<table class="border">
+    <tr class="border">
+        <th class="border">id</th>
+        <th class="border">name</th>
+        <th class="border">age</th>
+       <th class="border">country</th>
+    </tr>
+    {% for x in people %}
+      <tr class="border">
+        <td class="border">{{x.id}}</td>
+        <td class="border">{{x.name}}</td>
+        <td class="border">{{x.age}}</td>
+       <td class="border">{{x.country}}</td>
+    </tr>
+     {% endfor %}
+
+</table>
+
+
+
+
+ {% endblock content %}
+</body>
+</html>

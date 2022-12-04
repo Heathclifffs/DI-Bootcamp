@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+    {% block title %}
+    {{ page_title|default:"people" }}
+    {% endblock title %}
+
+    {% block content %}
+
+    <h1> Information about person{{id}}</h1>
+<table class="border">
+    <tr class="border">
+        <th class="border">id</th>
+        <th class="border">name</th>
+        <th class="border">age</th>
+       <th class="border">country</th>
+    </tr>
+    {% for x in people %}
+     {% if x.id == id %}
+      <tr class="border">
+        <td class="border">{{x.id}}</td>
+        <td class="border">{{x.name}}</td>
+        <td class="border">{{x.age}}</td>
+       <td class="border">{{x.country}}</td>
+    </tr>
+    {% endif %}
+     {% endfor %}
+
+</table>
+
+    {% endblock content %}
