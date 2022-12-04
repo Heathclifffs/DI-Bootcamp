@@ -1,0 +1,34 @@
+{% extends 'phonenumber.html' %}
+
+    {% block title %}
+    {{ page_title|default:"name" }}
+    {% endblock title %}
+
+    {% block content %}
+
+    <h1>Person with a name: '{{n}}'</h1>
+
+<table border="1">
+    <thead>
+    <td>id</td>
+    <td>name</td>
+    <td>email</td>
+    <td>phonenumber</td>
+    <td>adress</td>
+    </thead>
+
+
+     {% for x in Person %}
+    <tr>
+    <td>{{x.id}}</td>
+    <td>{{x.name}}</td>
+    <td>{{x.email}}</td>
+    <td>{{x.phone_number}}</td>
+    <td>{{x.adresse}}</td>
+    </tr>
+   {% endfor %}
+
+
+</table>
+
+ {% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'familly.html' %}
+
+    {% block title %}
+    {{ page_title|default:"Family" }}
+    {% endblock title %}
+
+    {% block content %}
+
+    <h1> Information about animal {{id}}</h1>
+<table border="1">
+    <thead>
+    <td>id</td>
+    <td>name</td>
+    <td>legs</td>
+    <td>weight</td>
+    <td>height</td>
+    <td>speed</td>
+    <td>family</td>
+    </thead>
+        {% for x in Animal %}
+       {% if x.id == id %}
+<tr>
+    <td>{{x.id}}</td>
+    <td>{{x.name}}</td>
+    <td>{{x.legs}}</td>
+    <td>{{x.weight}}</td>
+    <td>{{x.height}}</td>
+    <td>{{x.speed}}</td>
+    <td>{{x.family_id}}</td>
+    </tr>
+
+        {% endif %}
+
+     {% endfor %}
+
+</table>
+    {% endblock content %}

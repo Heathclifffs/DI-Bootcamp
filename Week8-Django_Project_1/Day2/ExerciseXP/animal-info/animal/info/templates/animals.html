@@ -1,0 +1,22 @@
+{% extends 'familly.html' %}
+
+    {% block title %}
+    {{ page_title|default:"Family" }}
+    {% endblock title %}
+
+    {% block content %}
+
+    <h1>Animals</h1>
+
+<table border="1">
+{% for x in Animal %}
+<tr>
+<td><a href="../animal/{{ x.id }}">{{ x.id }}</a></td>
+<td>{{ x.name }}</td>
+
+</tr>
+{% endfor %}
+</table>
+<p>
+</p>
+ {% endblock content %}
