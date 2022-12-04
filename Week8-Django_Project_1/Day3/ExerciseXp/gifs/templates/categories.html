@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%block title%}
+{{page_title}}
+{% endblock title%}
+
+{%block content%}
+
+{% for categorie in Categories %}
+
+<div style="display: block; width:50%; border: black solid 1px;" >
+    <span style="border-right: solid black 1px; padding-right: 20%"><a href="../category/{{categorie.id}}">{{categorie.id}}</a></span>
+    <span>{{categorie.name}}</span>
+</div>
+
+{% endfor %}
+{% endblock %}

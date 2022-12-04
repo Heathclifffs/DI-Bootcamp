@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{%block title%}
+{{page_title}}
+{% endblock title%}
+
+{%block content%}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="valider">
+</form>
+
+{% endblock content%}
