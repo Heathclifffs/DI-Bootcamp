@@ -1,0 +1,17 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block link %} <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% endblock%}
+
+{% block titre_s %}<h2>Supression </h2>{% endblock%}
+
+{% block delete_film %}
+<form method="post">
+    {{form|crispy}}<br>
+    {{ delete_form }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+</form>
+
+{% endblock %}
