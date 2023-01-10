@@ -1,0 +1,24 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% include 'partials/navbar.html' %}
+<br>
+<h2>Tous les nouveaux films</h2>
+<div class="row ">
+    {% for film in film %}
+
+    <div class="col-md-6">
+<div class="card" style="width: -18rem;">
+    <div class="card-body mt-2">
+      <h5 class="card-title">{{film.titre}} By {{film.realisateurs}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Date:{{film.date_sortie}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Categorie:{{film.categorie}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Pays:{{film.film_nationalite}}</h6>
+      <a href="{% url 'editDirecteur' film.id %}" class="card-link">Modifier le directeur</a>
+      <a href="{% url 'editFilm' film.id %}" class="card-link">Modifier le film</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+</div><br><br>
+{% endblock%}

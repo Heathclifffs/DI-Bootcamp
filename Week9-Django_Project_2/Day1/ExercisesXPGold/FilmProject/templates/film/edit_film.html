@@ -1,0 +1,16 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block link %} <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% endblock%}
+
+{% block edit_f %}<h2>Modifier le film </h2>{% endblock%}
+
+{% block edit_film %}
+<form method="post">
+    {{ edit_form|crispy }}<br>
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Sauvegarder</button>
+
+</form>
+{% endblock%}
