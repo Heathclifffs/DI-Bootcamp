@@ -1,0 +1,257 @@
+{% extends 'content.html' %}
+
+{% block content %}
+      <!-- Salle de Cine Rooms <br> -->
+      {% if room.sectionId.sectionName == 'Cinema' %}
+         <div id="main_Container">
+            <div id="haut">
+               <div id="desc">
+                  <h1>{{ room.roomName }}</h1>
+                  <img src="" alt="RoomPic">
+                  <div id="desc_left">
+                        <p>Location :</p>
+                        <p>Ouvert :</p>
+                        <p>Jours :</p>
+                        <p>Places :</p>
+                  </div>
+                  <div id="desc_right">
+                     <p>{{room.roomPlace}} -- {{room.roomGeoLoc}}</p>
+                     <p>{{ room.roomOpenHour }} a {{ room.roomCloseHour }}</p>
+                     <p>{{ room.roomOpenDay }}</p>
+                     <p>{{ room.roomPlaceAvailabe }}</p>
+                  </div>
+                </div>
+
+                <div id="descso">
+                  <h3>Description</h3>
+                  <div id="descsop">
+                     <p>{{room.roomDesc}}</p>
+                  </div>
+                </div>
+             </div>
+
+             <div id="program">
+               <h3>program :</h3>
+               <div id="ProgramToday">
+                  <h4>Today</h4>
+                  <div id="TD">
+                     {% for movie in movies %}
+                        {% if room.id == movie.roomName.id %}
+                           <div><a href='{% url "showMovie" movie.id %}'>
+                              {{movie.movieName}}
+                           </a></div>
+                         {% endif %}         
+                         {% empty %}
+                         <p>Pas De Sessions</p>
+                     {% endfor%}
+                  </div>
+                  <button>Precedent</button><button>Suivant</button>
+               </div>
+               <div id="ProgramCom">
+                  <h4>Cooming Soon :</h4>
+                  <div id="TD">
+               {% for movie in movies %}      
+                  {% if room.id == movie.roomName.id %}
+                     <div><a href='{% url "showMovie" movie.id %}'>
+                        {{movie.movieName}}
+                     </a></div>
+                  {% endif %}         
+                   {% empty %}
+                   <p>Pas De Sessions</p>
+               {% endfor%}
+                  </div>
+                  <button>Precedent</button><button>Suivant</button>
+               </div>
+             </div>
+            </div> 
+      {% endif %}
+      
+
+     
+     
+     
+     
+      <!-- Restaurant Room <br> -->
+    {% if room.sectionId.sectionName == 'Restaurants' %}
+            <div id="main">
+                  <div id="haut">
+                     <div id="presents">
+                        <div id="presentleft">
+                              <h1>{{ room.roomName }}</h1>
+                              <img src="" alt="Room_pic">
+                              <div id="Rleft">
+                                 <p>Location :</p>
+                                 <p>Ouvert :</p>
+                                 <p>Jours :</p>
+                                 <p>Places :</p>
+                              </div>
+                              <div id="Rright">
+                                 <p>{{room.roomPlace}} -- {{room.roomGeoLoc}}</p>
+                                 <p>{{ room.roomOpenHour }} a {{ room.roomCloseHour }}</p>
+                                 <p>{{ room.roomOpenDay }}</p>
+                                 <p>{{ room.roomPlaceAvailabe }}</p>
+                              </div>
+                        </div>
+                     </div>
+
+                     <div id="description">
+                        <div id="reservations">
+                           <h2>Reserver une Place</h2><hr>
+                        {% for restau in restaus %}
+                           {% if restau.roomName.id == room.id %}
+                              <p>Place Restant : {{ restau.restauAvailableplaces }}</p>
+                              <fieldset>
+                                 <legend>{{ room.roomName}}</legend>
+                                 <form method="post" action="">
+                                    {% csrf_token %}
+                                    <p>Ticket No : {{ticketRCount}}</p>
+                                    <input type="text" name="" id="" value="{{room.roomName}} " placeholder='{{movie.roomName}}' readonly><br>
+                                    <input type="text" name="Lieu" id="" value="{{room.roomPlace}}" readonly>
+                                    <input type="text" name="Secteur" value="{{room.roomGeoLoc}}"readonly> <br>
+                                    <label for="MName">Place :</label><input name='Place' type="text" value=2 >
+                                    <label for="dd">Date :</label><input type="date" name="Date" id="" value="|date:'Y-m-d'"><br>
+                                    <label for="hd">Heure :</label><input type="time" value="Heure" name="Heure" id="">
+                                    <label for="pt">Prix :</label><input type="text" name="Prix" id="" value="{{restau.restauTicketPrice}}" readonly> <br>
+                                    <label for="name">Nom :</label><input type="text" value="{{user.username}}" name="Nom" readonly>
+                                    <label for="fname">Prenom(s) :</label><input name="Prenom" type="text" value="{{user.userFnSame}}" readonly><br>
+                                    <img src="" alt="QR"><br>
+                                    <input type="submit" value="Reserver">
+                                 </form>
+                              </fieldset>
+                              {% endif %}
+                              {% empty %}
+                              <p>Pas Disponible</p>                                
+                           {% endfor %}   
+                        </div>
+                        <div id="des">
+                              <p>{{ room.roomDesc }}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="Menu">
+                     <h3>Menu :</h3>
+                     <div id="goon">
+                    {% for plate in plates %}
+                        {% if room.id == plate.roomName.id %}
+                          <div><a href="{% url 'showPlate' plate.id %}">
+                             {{plate.plateName}}
+                          </a></div>
+                        {% endif %} 
+                        {% empty %}
+                         <p>Pas de Menu</p> 
+                    {% endfor%}
+                
+                     </div>
+                  </div>
+            </div>
+    {% endif %}
+    
+
+
+     <!-- Hotel Room <br> -->
+     {% if room.sectionId.sectionName == 'Hotels' %}
+        <div id="container">
+            <div id="Highest">
+               <div id="Hi1">
+                     <h1>{{room.roomName}}</h1>
+                     <img src="" alt="Room_pic">
+               </div>
+               <div id="hi2">
+                     <div id="presentt1">
+                        <p>Location :</p>
+                        <p>Ouvert :</p>
+                        <p>Jours :</p>
+                        <p>Places :</p> 
+                     </div>
+                     <div id="presentt2">
+                        <p>{{room.roomPlace}} -- {{room.roomGeoLoc}}</p>
+                           <p>{{ room.roomOpenHour }} a {{ room.roomCloseHour }}</p>
+                           <p>{{ room.roomOpenDay }}</p>
+                           <p>{{ room.roomPlaceAvailabe }}</p>
+                     </div>
+               </div>
+            </div>
+            <div id="middle">
+                  <h3>Description :</h3>
+                  <div id="d">
+                     <p>{{room.roomDesc}}</p>
+                  </div>
+            </div>
+            <div id="last">
+               <div id="classic">
+                  <h3>Get a Classic Room :</h3>
+                  {% for chamber in chambers%}
+                     {% if chamber.roomName.id == room.id and chamber.chamberType.type == 'Classic' %}
+                  <div id="reserv">
+                     <div id="redesc">
+                        <p>{{chamber.chamberDesc}}</p>
+                     </div>
+                     <div id="res">
+                        <fieldset>
+                           <legend>{{ room.roomName}}</legend>
+                           <form method="post" action="">
+                              {% csrf_token %}
+                              <p>Ticket No : {{ticketCCount}}</p>
+                              <input type="text" name="" id="" value="{{room.roomName}} " placeholder='{{movie.roomName}}' readonly>
+                              <input type="text" value="{{chamber.chamberType}}"><br>
+                              <input type="text" name="" id="" value="{{room.roomPlace}}" readonly>
+                              <input type="text" value="{{room.roomGeoLoc}}"readonly> <br>
+                              <label for="MName">Date Arrivee :</label><input name='MName' type="date" value="{{movie.movieName}}" >
+                              <label for="dd">Date Depart:</label><input type="date" name="dd" id="" value=""><br>
+                              <label for="hd">Heure :</label><input type="time" value="" name="hd" id="">
+                              <label for="pt">Prix par jour:</label><input type="text" name="pt" id="" value="{{chamber.chamberTicketPrice}}" readonly> <br>
+                              <label for="name">Nom :</label><input type="text" value="{{user.username}}" readonly>
+                              <label for="fname">Prenom(s) :</label><input type="text" value="{{user.userFnSame}}" readonly><br>
+                              <img src="" alt="QR"><br>
+                              <input type="submit" value="Reserver">
+                           </form>
+                        </fieldset>
+                     </div>
+                  </div>
+                  {% endif%}
+                     {% empty%}
+                        <p>Service Non Disponible</p>   
+                  {% endfor %}
+               </div>
+               <div id="Royal">
+                  <h3>Get a Royal Room :</h3>
+                  {% for chamber in chambers%}
+                     {% if chamber.roomName.id == room.id and chamber.chamberType.type == 'Royal' %}
+                  <div id="reserv">
+                     <div id="redesc">
+                        <p>{{chamber.chamberDesc}}</p>
+                     </div>
+                     <div id="res">
+                        <fieldset>
+                           <legend>{{ room.roomName}}</legend>
+                           <form method="post" action="">
+                              {% csrf_token %}
+                              <p>Ticket No : {{ticketCCount}}</p>
+                              <input type="text" name="" id="" value="{{room.roomName}} " placeholder='{{movie.roomName}}' readonly>
+                              <input type="text" value="{{chamber.chamberType}}"><br>
+                              <input type="text" name="" id="" value="{{room.roomPlace}}" readonly>
+                              <input type="text" value="{{room.roomGeoLoc}}"readonly> <br>
+                              <label for="MName">Date Arrivee :</label><input name='MName' type="date" value="{{movie.movieName}}" >
+                              <label for="dd">Date Depart:</label><input type="date" name="dd" id="" value=""><br>
+                              <label for="hd">Heure :</label><input type="time" value="" name="hd" id="">
+                              <label for="pt">Prix par jour:</label><input type="text" name="pt" id="" value="{{chamber.chamberTicketPrice}}" readonly> <br>
+                              <label for="name">Nom :</label><input type="text" value="{{user.username}}" readonly>
+                              <label for="fname">Prenom(s) :</label><input type="text" value="{{user.userFnSame}}" readonly><br>
+                              <img src="" alt="QR"><br>
+                              <input type="submit" value="Reserver">
+                           </form>
+                        </fieldset>
+                     </div>
+                  </div>
+                  {% endif%}
+                     {% empty%}
+                        <p>Service Non Disponible</p>   
+                  {% endfor %}
+               </div>
+            </div>
+        </div>
+      {% endif %}
+
+   <!-- {% if room.id == chamber.roomName.id %} -->
+   <!-- {% endif %}       -->
+ {% endblock %}

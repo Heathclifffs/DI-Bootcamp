@@ -1,0 +1,78 @@
+{% extends 'content.html' %}
+
+{% block content %}
+<div>    
+<h3>Tableau De Bord De : {{room.roomName}}</h3>
+
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Mettre A Jour">
+        </form>
+        <a href="{% url 'delete-room' room.id %}">Supprimer</a>
+    </div>
+
+    <div>
+        {% if room.sectionId.sectionName == 'Cinema' %}
+            <div>
+                {% for movie in movies %}
+                    {% if movie.roomName.id == room.id %}
+                        <div>
+                            <a href="{%url 'update-movie' movie.id%}">{{movie.movieName}}</a>
+                            <a href="{% url 'delete-movie' movie.id %}">Supprimer</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}    
+            </div>
+            <a href=" {% url 'create-movie'  %} ">Ajouter Un Film</a>
+        {% endif %}
+
+
+        {% if room.sectionId.sectionName == 'Restaurants' %}
+
+            <div>
+                {% for plate in plates %}
+                    {% if plate.roomName.id == room.id %}
+                        <div>
+                            <a href="{%url 'update-plate' plate.id %}">{{plate.plateName}}</a>
+                            <a href=" {% url 'delete-plate' plate.id%}  ">Supprimer</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}    
+            </div>
+            <a href=" {% url 'create-plate'  %} ">Ajouter un plat</a>
+            
+            <div>
+                {% for restau in restaus %}
+                    {% if restau.roomName.id == room.id %}
+                        <div>
+                            <a href=" {% url 'update-restau' restau.id %} ">{{restau.restauAvailableplaces}}</a>
+                            <a href="{% url 'delete-restau' restau.id %}">Supprimer</a>
+                        </div>
+                    {% endif %}
+                   
+                {% endfor %}
+                <a href="{% url 'create-restau' %}"> Ajouter Des Reservations de Place </a>
+            </div>
+           
+        {% endif %}
+
+        {% if room.sectionId.sectionName == 'Hotels' %}
+            <div>
+                {% for chamber in chambers %}
+                    {% if chamber.roomName.id == room.id%}
+                        <div>
+                            <a href="{% url 'update-chamber' chamber.id %}">{{chamber.chamberType}}</a>
+                            <a href="{% url 'delete-chamber' chamber.id %}">Supprimer</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <a href=" {% url 'create-chamber'  %} ">Ajouter Des Chambres</a>
+        {% endif %}
+
+
+    </div>
+</div>
+{% endblock %}

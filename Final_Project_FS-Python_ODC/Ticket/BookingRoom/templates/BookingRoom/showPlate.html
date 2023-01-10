@@ -1,0 +1,72 @@
+{% extends 'content.html' %}
+
+{% block content %}
+    <div id="main_container">
+        <div id="room_bar">
+            <div id="room_bar_left">
+                <ul>
+                    <li><img src="" alt="Logo"></li>
+                    <li><h3>{{plate.roomName}}</h3></li>
+                </ul>
+            </div>
+            <div id="room_bar_right">
+                <input type="text" placeholder="Trouver Un Plat">
+            </div>
+        </div>
+        <div id="Plates">
+            <div id="platePic">
+                <img src="" alt="Plate_Picture">
+            </div>
+            <div id="plate_ids">
+                <h1>{{plate.plateName }}</h1>
+                <div id="descs">
+                    <div id="desc_left">
+                        <p>Nature :</p>
+                        <p>Preparations :</p>
+                        <p>Chef :</p>
+                        <p>Prix :</p>
+                        <p>Statut :</p>
+                    </div>
+                    <div id="desc_right">
+                        <p>{{ plate.plateType }}</p>
+                        <p>{{ plate.PlateMinCookTime }} mins</p>
+                        <p>{{ plate.plateCooker }}</p>
+                        <p>{{ plate.plateTicketPrice }}</p>
+                        <p>{{ plate.PlateStatus }}</p>
+                    </div>
+
+                </div>
+            </div>
+            <div id="PlateS">
+                <div class="litterature1">
+                    <h3>Description :</h3>
+                    <p>{{ plate.plateDesc }}</p>
+                </div>
+                <div class="litterature2">
+                    <h3>Ingredient(s) :</h3>
+                    <p>{{ plate.plateIngredient}}</p>
+                </div>
+            </div>
+        </div>
+        <div id="reservation">
+                <h3>Ticket :</h3>
+                <fieldset>
+                    <legend>{{plate.roomName}}</legend>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <p>Ticket No : {{ticketCount}}</p>
+                        <input type="text" name="roomName" id="" value="{{plate.roomName}} " placeholder='{{plate.roomName}}' readonly><br>
+                        <input type="text" name="Lieu" id="" value="{{plate.roomName.roomPlace}}" readonly>
+                        <input type="text" name="Secteur" value="{{plate.roomName.roomGeoLoc}}"readonly> <br>
+                        <label for="MName">Plat:</label><input name='PlateName' type="text" value="{{plate.plateName}}" readonly>
+                        <label for="dd">Date :</label><input type="text" name="Date" id="" value="{{d|date:'Y-m-d' }}" readonly><br>
+                        <label for="name">Nom :</label><input type="text" name="Nom" value="{{user.username}}" readonly>
+                        <label for="fname">Prenom(s) :</label><input type="text" name="Prenom" value="{{User.userFnSame}}" readonly><br>
+                        <label for="pt">Prix :</label><input type="text" name="Prix" id="" value="{{plate.plateTicketPrice}}" readonly> <br>
+                        <img src="" alt="QR"><br>
+                        <input type="button" value="Revenir"> <input type="submit" value="Reserver">
+                    </form>
+                </fieldset>
+        </div>
+    </div>
+{% endblock %}

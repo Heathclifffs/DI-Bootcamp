@@ -1,0 +1,115 @@
+{% extends 'content.html' %}
+
+{% block content %}
+    <div id="main_container">
+        <div id="room_bar">
+            <div id="room_bar_left">
+                <ul>
+                    <li><img src="" alt="LOGO"> <h3>{{movie.roomName}}</h3></li>
+                    <li>
+                        <Select>
+                            <option value="All" selected> All movies</option>
+                            <option value="Sci-Fi"><a href=""> Science Fiction</a></option>
+                            <option value="Drame" >Drame</option>
+                            <option value="Horreur">Horreur</option>
+                            <option value="Humour">Humour</option>
+                            <option value="Policier">Policier</option>
+                            <option value="Jenesse">Jenesse</option>
+                            <option value="Documentaire">Documentaire</option>
+                            <option value="Histoire"> Histoire</option>
+                        </Select>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="room_bar_right">
+                <input type="text" placeholder="Trouver Un Film">
+            </div>
+        </div>
+        <div id="movies">
+            <div id="movies_left">
+                <h1>{{movie.movieName}}</h1>
+                <div id="descs">
+                    <div id="descs-left">
+                        <p>Genre :</p>
+                        <p>Duree :</p>
+                        <p>Langue :</p>
+                        <p>Createur :</p>
+                        <p>Diffusion :</p>
+                        <p>Heure :</p>
+                        <p>Prix :</p>
+                        <p>Place left : </p>
+                        <p>Ticket:</p>
+                    </div>
+
+                    <div id="descs-right">
+                        <p>{{movie.movieType}}</p>
+                        <p>{{ movie.movieDuration }} min</p>
+                        <p>{{ movie.movieLanguage }}</p>
+                        <p>{{ movie.movieCreator }}</p>
+                        <p>{{ movie.movieDiffDate }}</p>
+                        <p>{{ movie.movieDiffHour }}</p>
+                        <p>{{ movie.movieTicketPrice }} Francs CFA</p>
+                        <p>{{ movie.movieAvailableplaces}}</p>
+                        <p>{{ movie.movieStatus }}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="movies_right">
+                <h3>Synopsis : </h3>
+                <div id="story">
+                    <p>
+                        {{movie.movieDesc}}
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="reservation">
+            <div id="reservation_left">
+                <h3>Toutes les dates: </h3>
+                <div id="a_date">
+                    {% for other in others %}
+                        {% if movie.movieName == other.movieName and movie.roomName.id == other.roomName.id and movie.DiffHour == other.DiffHour%}
+                            <div class="Date">
+                              <p>{{other.movieDiffDate }}</p>
+                              <p>{{ other.movieDiffHour }}</p>
+                         </div>
+                        {% endif %} 
+                    {% empty %}
+                        <p>Pas D'autres Sessions</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div id="reservation_right">
+                <h3>Tickets:</h3>
+                <fieldset>
+                    <legend>{{movie.roomName}}</legend>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <p>Ticket No : {{ticketCount}}</p>
+                        <input type="text" name="roomName" id="" value="{{movie.roomName}} " placeholder='{{movie.roomName}}' readonly><br>
+                        <input type="text" name="Lieu" id="" value="{{movie.roomName.roomPlace}}" readonly>
+                        <input type="text" name="Secteur" value="{{movie.roomName.roomGeoLoc}}"readonly> <br>
+                        <label for="MName">Titre :</label><input name='MovieName' type="text" value="{{movie.movieName}}" readonly>
+                        <label for="dd">Date :</label><input type="text" name="Date" id="" value="{{movie.movieDiffDate|date:'Y-m-d' }}" readonly><br>
+                        <label for="hd">Heure :</label><input type="text" name="Heure" value="{{movie.movieDiffHour |time:'H:i:s'}}" id="" >
+                        <label for="pt">Prix :</label><input type="text" name="Prix" id="" value="{{movie.movieTicketPrice}}" readonly> <br>
+                        <label for="name">Nom :</label><input type="text" name="Nom" value="{{user.username}}" readonly>
+                        <label for="fname">Prenom(s) :</label><input type="text" name="Prenom" value="{{User.userFnSame}}" readonly><br>
+                        <label for="Site">Place :</label><input type="text" name="Place" value="{{movie.movieAvailableplaces}}">
+                        <img src="" alt="QR"><br>
+                        <input type="button" value="Revenir"> <input type="submit" value="Reserver">
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    
+    </div>    
+
+
+{% endblock %}

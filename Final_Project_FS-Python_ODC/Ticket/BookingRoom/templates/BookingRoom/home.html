@@ -1,0 +1,43 @@
+{% extends 'content.html' %}
+
+{% block content%}
+
+ <h1>Home Pages starting</h1>
+ 
+ <div id='content'>
+    <div id="left-sidebar">
+            <div class="sectionss">
+                <h2>Sections</h2>
+                {% for section in sections %}
+                    <div>
+                        <a href="{%url 'section' section.id %}"><h4>{{ section.sectionName}}</h4></a>
+                    </div>
+                {% endfor %}
+                <hr>
+            </div>
+            <div id="contact">
+                <a href="/"> <h4>Accueil</h4></a>
+                <a href=""><h4>Contacez nous</h4> </a>
+                <a href=""><h4>A Propos</h4></a>
+            </div>
+    </div>
+
+    <div id="middle">
+        {%  for section in sections %}
+            <h3>{{section.sectionName}}</h3>
+            <hr>
+             {% for room in rooms %}
+                <!-- <p>section:{{section.sectionName}} and room:{{room.sectionId}}</p> -->
+                {% if room.sectionId.id == section.id  %}
+                    <div>
+                        <a href="{% url 'room' room.id %}"><p>{{ room.roomName }} </p></a>
+                    </div>
+                 {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    
+  </div>  
+   
+
+ {% endblock%}

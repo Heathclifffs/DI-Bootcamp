@@ -1,0 +1,88 @@
+{% extends 'content.html' %}
+
+{% block content %}
+<div id="main">
+        <div >
+  
+        </div>
+  
+        <!-- Salle de Cine Rooms <br> -->
+        {% if section.sectionName == 'Cinema' %}
+           <div id="presentation">
+                <p>Decouvrer Le Meilleur Du Cinema Burkinabe Et D'ailleur </p>
+           </div>
+           <div id="listage">
+                <h1>{{ section.sectionName }}</h1>
+           <hr>
+           {% for room in rooms %}
+                {% if room.sectionId.id == section.id %}
+               
+                    <div id="lis"><a href='{% url "room" room.id %}'>
+                        <img src="" alt="room_pic">
+                      <p> {{room.roomName}}</p>
+                      <p>open: {{room.roomOpenHour}} to {{room.roomCloseHour}}</p>
+                      <p>{{ room.roomPlace }} - {{room.roomGeoLoc}}</p>
+                    </a></div>
+                {% endif %}    
+             
+           {% endfor%}
+           </div>
+           
+  
+        {% endif %}
+  
+  
+         <!-- Restaurant Room <br> -->
+         {% if section.sectionName == 'Restaurants' %}
+         <div id="presentation">
+              <p> Decrouver Les Restaurants Les Plus Tendances Proche De Chez Vous </p>
+         </div>
+         <div id="listage">
+              <h1>{{ section.sectionName }}</h1>
+         <hr>
+         {% for room in rooms %}
+              {% if room.sectionId.id == section.id %}
+             
+                  <div id="lis"><a href='{% url "room" room.id %}'>
+                      <img src="" alt="room_pic">
+                    <p> {{room.roomName}}</p>
+                    <p>open: {{room.roomOpenHour}} to {{room.roomCloseHour}}</p>
+                    <p>{{ room.roomPlace }} - {{room.roomGeoLoc}}</p>
+                  </a></div>
+              {% endif %}    
+           
+         {% endfor%}
+         </div>
+         
+
+      {% endif %}
+  
+  
+  
+       <!-- Hotel Room <br> -->
+       {% if section.sectionName == 'Hotels' %}
+       <div id="presentation">
+            <p> Un Peu Fatigue ? Faites un Tour Dans Les Meilleurs  Hotels Proche de chez vous </p>
+       </div>
+       <div id="listage">
+            <h1>{{ section.sectionName }}</h1>
+       <hr>
+       {% for room in rooms %}
+            {% if room.sectionId.id == section.id %}
+           
+                <div id="lis"><a href='{% url "room" room.id %}'>
+                    <img src="" alt="room_pic">
+                  <p> {{room.roomName}}</p>
+                  <p>open: {{room.roomOpenHour}} to {{room.roomCloseHour}}</p>
+                  <p>{{ room.roomPlace }} - {{room.roomGeoLoc}}</p>
+                </a></div>
+            {% endif %}    
+         
+       {% endfor%}
+       </div>
+       
+
+    {% endif %}
+  
+</div>        
+{% endblock%}
