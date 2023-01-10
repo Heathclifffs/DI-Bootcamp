@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    {% block script %}{% endblock script%}
+    {% block link %}{% endblock%}
+    <title>Document</title>
+  </head>
+  <body>
+        {% block content %}
+        {% endblock%}
+    <center>
+        {% block connection %}
+        {% endblock %}
+         
+        {% block profile %}
+        {% endblock %}
+        <div class="container mt-4">
+          <div class="row justify-content-center">
+            <div class="col-8">
+              {% block titre_f %}{% endblock%}
+              {% block film_form %}{% endblock%}
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-4">
+          <div class="row justify-content-center">
+            <div class="col-8">
+              {% block titre_d %}{% endblock%}
+              {% block director_form %}{% endblock%}
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container mt-4">
+          <div class="row justify-content-center">
+            <div class="col-8">
+              {% block edit %}{% endblock%}
+              {% block edit_directeur %}
+              {% endblock  %}
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-4">
+          <div class="row justify-content-center">
+            <div class="col-8">
+              {% block edit_f %}{% endblock%}
+              {% block edit_film %}
+              {% endblock  %}
+            </div>
+          </div>
+        </div>
+      </center>
+
+  </body>
+</html>
