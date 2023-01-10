@@ -1,0 +1,18 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block titre_d %}
+<h1 class="mt-5" align="center">Director</h1>
+<hr class="mt-0 mb-4">
+{% endblock%}
+{% block director_form%}
+
+
+
+        <form method="post" action="{% url 'AddDirector' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}<br>
+            <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+{% endblock%}
