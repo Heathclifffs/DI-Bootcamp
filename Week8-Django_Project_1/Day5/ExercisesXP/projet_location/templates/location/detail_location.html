@@ -1,0 +1,48 @@
+{% block detail_location %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+{% endblock%}
+
+{%  include 'navbar/nav.html' %}<br>
+
+
+
+
+<table class="table  table-striped">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Nom client</th>
+        <th scope="col">Prenom client</th>
+        <th scope="col">Email client</th>
+        <th scope="col">Numero client</th>
+        <th scope="col">Adresse client</th>
+        <th scope="col">Ville client</th>
+        <th scope="col">Pays client</th>
+        <th scope="col">Type client</th>
+        <th scope="col">Date creation du vehicule</th>
+        <th scope="col">Prix reel de location vehicule</th>
+        <th scope="col">Taille vehicule</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for  client in  client %}
+
+      <tr>
+        <td>{{client.client}}</td>
+        <td>{{client.client.prenom}}</td>
+        <td>{{client.client.email}}</td>
+        <td>{{client.client.numero}}</td>
+        <td>{{client.client.adresse}}</td>
+        <td>{{client.client.ville}}</td>
+        <td>{{client.client.pays}}</td>
+        <td>{{client.vehicule.type}}</td>
+        <td>{{client.vehicule.date_created}}</td>
+        <td>{{client.vehicule.prix}}</td>
+        <td>{{client.vehicule.taille}}</td>
+      </tr>
+      {% endfor%}
+        
+    </tbody>
+  </table>
+{% endblock%}

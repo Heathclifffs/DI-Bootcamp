@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+{% endblock%}
+
+{% include 'navbar/nav.html' %}
+
+{% block h1_vehicule%}
+<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back to home</button></a>
+<h1 class="mt-5" align="center">Ajoutez un nouveau vehicule</h1>
+<hr class="mt-0 mb-4">
+{% endblock %}
+<div class="alert alert-success" role="alert">
+    {% for message in messages %}
+
+       <p>{{ message }}</p>
+       {% endfor %}
+
+</div>
+{% block ajout_vehicule %}
+
+<form method="post" action="{% url 'ajout_vehicule' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}<br>
+    <button type="submit" class="btn btn-success">Save</button>
+    </form>
+{% endblock%}
+

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+{% endblock%}
+
+{% block clients %}
+
+{% include 'navbar/nav.html' %}
+
+<div class="container-fluid">
+
+{% for clients in clients %}
+<p>{{clients.nom}}</p>
+{% endfor %}
+{% endblock%}
+</div>

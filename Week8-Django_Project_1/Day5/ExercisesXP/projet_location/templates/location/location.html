@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+{% block location %}
+{%  include 'navbar/nav.html' %}<br>
+
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Type de vehicule</th>
+        <th scope="col">Date location</th>
+        <th scope="col">Date retour</th>
+      </tr>
+    </thead>
+    {% for location in location %}
+
+    <tbody>
+        <tr class="table-info">
+          <td><a href="{% url 'detail_location' location.vehicule.id %}" style="text-decoration:none;">{{location.vehicule.type}}</a></td>
+          <td>{{location.date_location}}</td>
+          <td>{{location.date_retour}}</td>
+        </tr>
+    {% endfor %}
+    {% comment %} {% for locations in locations %}
+    <tr>
+          <td><a href="{% url 'detail_location' locations.id %}" style="text-decoration:none;">{{locations.vehicule.type}}</a></td>
+          <td>{{locations.date_location}}</td>
+          <td>{{locations.date_retour}}</td>
+        </tr> {% endcomment %}
+    </tbody>
+    {% comment %} {% endfor %} {% endcomment %}
+
+</table>      
+{% endblock%}

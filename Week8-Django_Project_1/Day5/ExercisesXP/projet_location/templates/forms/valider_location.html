@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block h1%}
+
+{% endblock %}
+<p>Faites une location.</p>
+
+<div class="container">
+
+    <form action="" method="post" >
+        <div class="row justify-content-center">
+            <div class="col-6 mb-3">
+                
+                    <div class="col-sm-10">
+
+
+                        {% csrf_token %}
+                        {{ formLocation }}
+                        {{ formVehicule }}
+
+                        <input type="submit" value="Valider">
+                    </div>
+            </div>
+            </div>
+    </form>
+</div>

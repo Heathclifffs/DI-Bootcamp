@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+{% endblock%}
+
+{% include 'navbar/nav.html' %}
+
+{% block h1_client%}
+<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back to home</button></a>
+<h1 class="mt-5" align="center">Enregistrer vous en tant que client</h1>
+<hr class="mt-0 mb-4">
+
+{% endblock %}
+{% block ajout_client %}
+
+<form method="post" action="{% url 'ajout_client' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Save</button>
+    </form>
+{% endblock%}
+
