@@ -1,0 +1,20 @@
+<a href="/">
+    <h1>LOGO</h1>
+</a>
+<form method='GET' action="{% url 'home' %}" >
+    <input type="text" name="q" placeholder="Rechercher Un Endroit ...">
+
+</form>
+{% if request.user.is_authenticated %}
+<p>Bienvenu {{ request.user }}</p>
+<a href="{% url 'logout' %}">Se Deconnecter</a>
+<a href="{% url 'create-room' %}">Inscrire mon Etablissement</a>
+{% else %}
+<a href="{% url 'login' %}">Se Connecter</a>
+{% endif %}
+
+{% if request.user.is_authenticated and request.user == room.roomHost %}
+    <a href="{% url 'admin' room.id %}"> Gerer Cette Page</a>
+{%endif%}
+
+<hr>
