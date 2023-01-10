@@ -1,0 +1,19 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block titre_image %}
+<h1 class="mt-5" align="center">Image</h1>
+{% endblock %}
+<hr class="mt-0 m
+{% block image %}
+
+<form method="post" action="{% url 'AddImage' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}<br>
+    <button type="submit" class="btn btn-primary">Save</button>
+    </form><br>
+    
+
+
+{% endblock %}
