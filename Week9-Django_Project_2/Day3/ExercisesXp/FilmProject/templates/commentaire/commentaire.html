@@ -1,0 +1,37 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block link %} <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% endblock%}
+{% block nav %}{% include 'partials/navbar.html'%} {% endblock%}
+
+{% block titre_s %}<h2>Comment </h2>
+<div class="row">
+    {% for film in film %}
+
+    <div class="col-md-12">
+        <div class="card" style="width: 18rem;">
+            <div class="col-md-12">
+        
+            <img src="{{ film.afficher.image.url }}" class="card-img-top" alt="{{ film.image}}">
+            </div>
+            <div class="card-body mt-2">
+              <h5 class="card-title">{{film.titre}} By {{film.realisateurs}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Date:{{film.date_sortie}}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">Categorie:{{film.categorie}}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">Pays:{{film.film_nationalite}}</h6>
+              {% endfor%}
+            </div>
+        </div>
+</div>
+{% endblock%}
+
+{% block comment %}
+
+<form method="post">
+    {{ form_c|crispy }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Comment</button>
+</form>
+
+{% endblock %}

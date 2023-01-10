@@ -1,0 +1,17 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block link %} <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% endblock%}
+{% block profile%}
+{% include 'partials/navbar.html' %}
+{% for profile in profile   %}
+<div class="card" style="width: 29rem;height:29rem">
+    <div class="card-body">
+      <h4 class="card-title">Nom utilisateur {{profile.username}}</h4>
+      <h4 class="card-title mb-2 text-muted">Prenom {{profile.first_name}}</h4>
+      <h4 class="card-title mb-2 text-muted">Nom {{profile.last_name}}</h4>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock%}
