@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    {% block script %}{% endblock script%}
+    {% block link %}{% endblock%}
+    <title>Document</title>
+  </head>
+  <body>
+    {% block nav %}
+    {% include 'partials/navbar.html' %}
+    {% endblock%}
+
+    
+
+
+        {% block content %}
+        {% endblock%}
+    <center>
+        {% block connection %}
+        {% endblock %}     
+        
+        {% block register %}
+        {% endblock %}  
+        <div class="container-fluid ">
+          <div class="row justify-content-center">
+            <div class="col-8">
+              {% block titre_avis%}{% endblock%}
+              {% block comment %}
+              {% endblock  %}
+ {% comment %} ..........faire une reservation................................... {% endcomment %}
+
+              {% block titre_r %}{% endblock%}
+              {% block reservation %}
+              {% endblock  %}
+
+              {% block titre_reservation_e %}{% endblock%}
+              {% block editer_reservation_e %}
+              {% endblock  %}
+            </div>
+          </div>
+        </div>
+{% comment %} ..........message................................................... {% endcomment %}
+
+        {% block titre_message%}{% endblock%}
+        {% block message %}
+        {% endblock  %}
+{% comment %} ............................................................. {% endcomment %}
+        <div class="container ">
+          <div class="row ">
+            <div class="col-8 ">
+              {% block titre_v_avis %}{% endblock%}
+              {% block voir_avis %}
+              {% endblock  %}
+            </div>
+          </div>
+        </div>
+
+      
+
+{% comment %} ..bloc gestion des reservations.................. {% endcomment %}
+
+
+{% comment %} ...................bloc tous les reservations......................... {% endcomment %}
+      {% block titre_re %}{% endblock%}
+      {% block mes_reservation %}
+      {% endblock  %}
+{% comment %}....................... page administration reservation du personnel....... {% endcomment %}
+      {% block reservation_perso %}
+      {% endblock  %}
+{% comment %}........................editer les reservations............................ {% endcomment %}
+      {% block titre_reservation %}{% endblock%}
+      {% block editer_reservation %}
+      {% endblock  %}
+    
+
+  
+      </center>
+      {% block footer %}
+      {% include 'partials/footer.html' %}
+        {% endblock%}
+
+  </body>
+</html>

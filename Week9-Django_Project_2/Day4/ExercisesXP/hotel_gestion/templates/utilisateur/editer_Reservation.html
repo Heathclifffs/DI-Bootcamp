@@ -1,0 +1,26 @@
+{% load crispy_forms_tags %}
+{% load static %}
+{% load has_group %}
+{% block link %}
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% endblock %}
+{% if request.user|has_group:"Personnel" %}
+{% include 'partials/navperso.html' %}
+
+{% elif user.is_authenticated or not user.is_authenticated%}
+  {% include 'partials/nav.html' %}
+  {% endif %}
+
+  {% block editer_reservation_e %}
+  <div class="container-fluid" style='position:absolute;top:190px' align='center'>
+
+        <form method="post">
+            {{ edit_form|crispy}}<br>
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Sauvegarder</button
+        </form>
+        <hr>
+              {% include 'partials/footer.html' %}      
+    </div>
+
+      {% endblock%}

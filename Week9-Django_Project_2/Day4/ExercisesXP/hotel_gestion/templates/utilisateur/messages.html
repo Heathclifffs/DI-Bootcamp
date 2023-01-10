@@ -1,0 +1,34 @@
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% load has_group %}
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% include 'partials/navbar.html'%}
+<div style="position:absolute;top:127px;left:380px">
+<h1 class="mt-5" align="center">Message</h1>
+<hr class="mt-0 mb-4">
+</div>
+
+<div class="container-fluid" style='position:absolute;left:10px;top:250px' align='center'>
+
+  
+  {% for message in message %}
+  <div class="card" style="width:60rem" >
+
+    <div class="card-header" align="left">
+        <img src='static/bootstrap/css/circle-user-solid.svg' style='height:43px'>
+        {{message.author}}
+    </div>
+   
+    <div class="card-body" align="left">
+      <p class="card-text">{{message.content}}</p>
+    </div>
+    
+
+  </div>
+  <hr>
+  {% endfor %}  
+  {% include 'partials/footer.html'%}
+
+</div>
+

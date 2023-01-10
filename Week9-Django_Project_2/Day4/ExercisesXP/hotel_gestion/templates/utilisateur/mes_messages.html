@@ -1,0 +1,53 @@
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% load has_group %}
+{% block link %}
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+{% endblock %}
+{% include 'partials/navbar.html'%}
+{% block titre_message %}
+<h1 class="mt-5" align="center">Message</h1>
+<hr class="mt-0 mb-4">
+{% endblock%}
+
+
+  {% if message %}
+  {% for message in messages %}
+  <center>
+  <div  class="alert alert-success" role="alert"  style="width:500px">
+  {{message}}
+  </div>
+</center>
+  {% endfor%}
+  {% endif %} 
+
+  {% for message in message %}
+  <div class="card" style="width:60rem" >
+
+    <div class="card-header" align="left">
+        <img src='static/bootstrap/css/circle-user-solid.svg' style='height:43px'>
+        {{message.author}}
+    </div>
+    <div class="card-footer text-muted" align="left">
+        {{message.nom}}
+      </div>
+    
+    <div class="card-body" align="left">
+      <p class="card-text">{{message.content}}</p>
+    </div>
+    <div class="card-footer" align="left">
+    <a href="{% url 'modifier_message' message.id %}"><button type="button"  class="btn btn-primary">Modifier</button></a>
+    <a href="{% url 'suprimer_message' message.id %}" class="confirm-delete"><button type="button"  class="btn btn-danger">Suprimer</button></a>
+    <script>$(document).on('click', '.confirm-delete', function(){
+        return confirm('Are you sure you want to delete this?');
+    })</script>
+    </div>
+
+  </div>
+  <hr>
+</div>
+{% endfor %}  
+{% include 'partials/footer.html'%}
+

@@ -1,0 +1,59 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}  
+{% load static %}
+{% load has_group %}
+
+
+{% if request.user|has_group:"Personnel" %}
+{% include 'partials/navperso.html' %}
+
+{% elif user.is_authenticated or not user.is_authenticated%}
+  {% include 'partials/nav.html' %}
+  {% endif %}
+  {% block reservation_perso %}
+
+  
+<div class="container" style='position:relative;left:75px;top:-150px'>
+ 
+  <table class="table">
+    <thead>
+    <tr><td colspan=5>
+      {% for message in messages %}
+      <div class="alert alert-success" role="alert"  >
+      <center>{{message}}</center>
+      </div>
+      {% endfor %}
+    </td>
+      
+
+    </tr>
+      <tr>
+        <th scope="col">N chambre</th>
+        <th scope="col">Date reservation</th>
+        <th scope="col">Dure du sejour</th>
+        <th scope="col">Nombre de personne chambre</th>
+        <th scope="col">Date ariver</th>
+        <th scope="col">Date de depart</th>
+        <th scope="col">Prix unitaire</th>
+        <th scope="col">Prix total</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for reservation in reservation %}
+      <tr>
+        <th scope="row">{{reservation.id}}</th>
+        <td>{{reservation.date_reservation}}</td>
+        <td>{{reservation.dure_sejour}}</td>
+        <td>{{reservation.reservation.nombre_personne}}</td>
+        <td>{{reservation.date_reservation}}</td>
+        <td>---</td>
+        <td>{{reservation.reservation.prix}}</td>
+        <td>{{reservation.prix_total}}</td>
+        <td><a href="{% url 'editer_Reservation' reservation.id %}"><button type"button" class="btn btn-primary">Modifier</button></a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table><br><br><br><br>
+</div>
+{% endblock%}

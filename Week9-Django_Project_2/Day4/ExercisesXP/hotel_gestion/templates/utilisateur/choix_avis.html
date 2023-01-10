@@ -1,0 +1,8 @@
+{% load has_group %}
+{% if request.user|has_group:"Personnel" %}
+{% include 'utilisateur/voir_avis.html' %}
+
+{% elif user.is_authenticated or not user.is_authenticated%}
+  {% include 'utilisateur/voir_avis_u.html' %}
+  {% endif %}
+

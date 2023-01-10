@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" href={% static 'style.css'%}
+<link rel="stylesheet" href={% static 'bootstrap/css/bootstrap.min.css'%}
+<div class="container-fluid bg-primary ">
+    <h2>Personnel</h4>
+</div>
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Tor-kee</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}" style="text-decoration:none">Home</a>
+          </li>
+        </ul>
+      </div>
+      {% include 'connexion/index.html'%}
+    </div>
+  </nav>
+<div class="vertical-menu" >
+  <h4 class="active" style="position:relative;left:10px;background-color:#337ab7;height:32px; width:185px;color:white">Menu</h4>
+  <a href="{% url 'all_reservation' %}"  style="text-decoration:none">Reservations</a>
+  <a href="{% url 'voir_avis' %}"  style="text-decoration:none">Avis</a>
+  <a href="{% url 'messages' %}"  style="text-decoration:none">Messages</a>
+
+
+</div>
+  </div>

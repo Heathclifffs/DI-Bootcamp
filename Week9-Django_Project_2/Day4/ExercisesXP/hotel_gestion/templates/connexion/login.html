@@ -1,0 +1,36 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block connection %}
+<h4>LogIn!!</h4>
+        
+                  
+<div class="container">
+<form method="post" action="">
+    <div class="row justify-content-center">
+        <div class="col-6 mb-3">
+                <div class="alert alert-danger" role="alert">
+                    {% for message in messages %}
+
+                    <p>{{ message }}</p>
+                    {% endfor %}
+
+                  </div>
+
+            <div class="col-sm-10">
+                {% csrf_token %}
+
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary mt-2">Connect</button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</form>
+</div><br>
+<p style="position:relative;left:-130px">Pas de compte ? <a href="{% url 'signUp' %}">Inscrivez-vous maintenant !</a></p>
+
+{% endblock %}

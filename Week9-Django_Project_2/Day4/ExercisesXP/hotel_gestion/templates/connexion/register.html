@@ -1,0 +1,26 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block link%}
+<link rel="stylesheet" href="{% static "css/register.css" %}">
+{% endblock%}
+{% block register %}
+<div class="container">
+<h4>Register here!!</h4>
+  
+        <div class="row mb-3 mt- 2 justify-content-center" >
+          <div class="col-md-6">
+            {% if form.errors %}
+               {{ form.errors }}
+            {% endif %}
+          <form method="post">
+              {% csrf_token %}
+                  {{ form|crispy }} 
+                 
+<button type="submit" class="btn btn-primary">Register</button>
+</div>
+
+<p>Deja membre ? <a href="{% url 'login' %}">Connectez-vous maintenant !</a></p>
+{% endblock %}
+
+

@@ -1,0 +1,11 @@
+{% load has_group %}
+{% load crispy_forms_tags %}  
+{% load static %}
+{% if request.user|has_group:"Personnel" %}
+{% include 'partials/navperso.html' %}
+
+{% elif user.is_authenticated or not user.is_authenticated%}
+  {% include 'partials/nav.html' %}
+
+  {% endif %}
+

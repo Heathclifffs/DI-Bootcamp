@@ -1,0 +1,55 @@
+{% load crispy_forms_tags %}
+{% load static %}
+{% load has_group %}
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% if request.user|has_group:"Personnel" %}
+{% include 'partials/navperso.html' %}
+
+{% elif user.is_authenticated or not user.is_authenticated%}
+  {% include 'partials/nav.html' %}
+  {% endif %}
+
+<div style="position:absolute;top:127px;left:380px">
+<h2>Commentaires</h2>
+<a href="{% url 'addAvis' %}"><button type="button" class="btn btn-primary">Votre avis</button></a>
+</div><br>
+<center>
+{% for message in messages %}
+<div class="alert alert-success" role="alert">
+{{message}}
+</div>
+{% endfor %}
+</center>
+{% comment %} ........................................................................................... {% endcomment %}
+
+
+
+<div class="container-fluid" style='position:absolute;left:10px;top:240px' align='center'>
+  {% for avis in avis %}
+
+<div class="card" style="width:60rem">
+    <div class="card-header" align="left">
+        <img src='static/bootstrap/css/circle-user-solid.svg' style='height:43px'>
+        {{avis.author}}
+    </div>
+    <div class="card-footer text-muted" align="left">
+        {{avis.created_on}}
+      </div>
+    
+    <div class="card-body" align="left">
+      <p class="card-text">{{avis.content}}</p>
+    </div>
+    {% if request.user|has_group:"Personnel" %}
+
+    <div class="card-footer" align="left">
+      <p class="card-text"><a href="{% url 'suprimer_avis' avis.id %}"><button type="button"  class="btn btn-danger">Suprimer</button></a></p>
+    </div>
+    {% endif %}
+
+  </div>
+  {% endfor %}  
+
+  <hr>
+  {% include 'partials/footer.html'%}
+</div>
+

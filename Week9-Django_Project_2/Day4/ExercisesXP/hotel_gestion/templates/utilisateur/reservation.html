@@ -1,0 +1,82 @@
+{% extends 'partials/base.html' %}
+{% load crispy_forms_tags %}
+{% load has_group %}
+{% load static %}
+{% block link %}
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% endblock %}
+{% block script %}
+<script src="{% static 'script.js' %}"></script>
+{% endblock script%}
+
+{% if request.user|has_group:"Personnel" %}
+{% block titre_r %}
+<div align=  "left">
+<h2 >Reservations</h2>
+<a href="{% url 'reservation'  %}"><button type="button" class="btn btn-primary" onclick="displayDate(event)">Faites une reservation</button></a>
+</div>
+
+<hr class="mt-0 mb-4">
+{% endblock%}
+
+
+{% block reservation %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"N chambre</th>
+        <th scope="col">Date disponibilite</th>
+        <th scope="col">Prix chambre</th>
+        <th scope="col">Nombre de personne chambre</th>
+        <th scope="col">Date ariver</th>
+        <th scope="col">Date de depart</th>
+        <th scope="col">Statut chambre</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for reservation in reservation %}
+      <tr>
+        <th scope="row">{{reservation.id}}</th>
+        {% if reservation.date_disponible %}
+        <td>{{reservation.date_disponible}}</td>
+        {% else %}
+        <td>-----</td>
+        {% endif %}
+        <td>{{reservation.prix}}</td>
+        <td>{{reservation.nombre_personne}}</td>
+        {% if reservation.date_ariver %}
+        <td>{{reservation.date_ariver}}</td>
+        <td>{{reservation.date_depart}}</td>
+        {% else %}
+        <td>---</td>
+        <td>---</td>
+        {% endif %}
+
+        {% if reservation.disponible %}
+        <td> &#x2705; </td>
+      
+
+        {% else %}
+
+        <td> 	&#x274C;</td>
+     
+        {% endif %}
+      </tr>
+      {% endfor%}
+    </tbody>
+</table>
+<center>
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+    {{message}}
+    </div>
+    {% endfor %}
+    </center>
+<form method="post" action="{% url 'reservation' %}" enctype="multipart/form-data"  id="myForm" style="visibility:hidden">
+    {% csrf_token %}
+    {{ form|crispy }}<br>
+    <button type="submit" class="btn btn-primary">Save</button>
+    </form><br>
+{% endblock%}
+{% endif %}

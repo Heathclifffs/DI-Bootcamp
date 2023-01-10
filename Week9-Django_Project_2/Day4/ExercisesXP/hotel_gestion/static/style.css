@@ -1,0 +1,22 @@
+.vertical-menu {
+    width: 200px;
+  
+  }
+  
+  .vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: underline;
+  }
+  
+  .vertical-menu a:hover {
+    background-color:#77a3c9;
+ 
+  }
+  
+  .vertical-menu a.active  {
+    background-color:#337ab7;
+    color: white;
+  }
